@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Glassculator</title>
+</head>
+<body>
+    <h1>GLASSCULATOR</h1>
+    <p>counting with tilting style giving more experience</p>
+    <div class="container">
+        <form class="calculator" name="calc">
+            <input type="text" readonly class="value" name="typecal" />
+            <span class="num clear" onclick="calc.typecal.value = ''">C</span>            
+            <span class="num" onclick="document.calc.typecal.value += '%'">%</span>
+            <span class="num" onclick="document.calc.typecal.value += '**'">&radic;</span>
+            <span class="num" onclick="document.calc.typecal.value += '7'">7</span>
+            <span class="num" onclick="document.calc.typecal.value += '8'">8</span>
+            <span class="num" onclick="document.calc.typecal.value += '9'">9</span>
+            <span class="num" onclick="document.calc.typecal.value += '/'">/</span>
+            <span class="num" onclick="document.calc.typecal.value += '4'">4</span>
+            <span class="num" onclick="document.calc.typecal.value += '5'">5</span>
+            <span class="num" onclick="document.calc.typecal.value += '6'">6</span>
+            <span class="num" onclick="document.calc.typecal.value += '*'">*</span>
+            <span class="num" onclick="document.calc.typecal.value += '1'">1</span>
+            <span class="num" onclick="document.calc.typecal.value += '2'">2</span>
+            <span class="num" onclick="document.calc.typecal.value += '3'">3</span>
+            <span class="num" onclick="document.calc.typecal.value += '-'">-</span>
+            <span class="num" onclick="document.calc.typecal.value += '0'">0</span>
+            <span class="num" onclick="document.calc.typecal.value += '00'">00</span>
+            <span class="num" onclick="document.calc.typecal.value += '.'">.</span>
+            <span class="num" onclick="document.calc.typecal.value += '+'">+</span>
+            <span class="num equal" onclick="document.calc.typecal.value = eval(calc.typecal.value)">=</span>
+            <span class="num" onclick="return plusMinus()">&plusmn;</span>
+        </form>
+    </div>
+    <div class="myfoot">
+        <p>Created with 
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#ea1c2c" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg> by <a href="https://www.instagram.com/azhardanii/" target="_blank">AzharDanii</a>
+        </p>
+    </div> 
+    <script type="text/javascript" src="vanillatilt.js"></script>	
+    <script>
+        VanillaTilt.init(document.querySelector(".container"), {
+            max: 13,
+            speed: 300,
+            glare: true,
+            "max-glare": 0.3
+        });
+
+        function plusMinus() {
+            let cek = document.calc.typecal.value;
+            if(cek<0) {
+                document.calc.typecal.value = cek * (-1);
+            } else {
+                document.calc.typecal.value = cek * (-1);                
+            }
+        }
+    </script>
+</body>
+</html>

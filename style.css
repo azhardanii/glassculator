@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;    
+    background: linear-gradient(324deg, rgba(163,182,0,1) 40%, rgba(227,255,120,1) 100%);
+    overflow: hidden;
+}
+
+h1 {    
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+.container {
+    position: relative;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+}
+
+.calculator {
+    position: relative;
+    display: grid;
+}
+
+.value {
+    grid-column: span 4;
+    height: 100px;
+    width: 310px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 45px;
+    font-weight: 500;
+    background: transparent;
+    color: #000;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+span {
+    display: grid;
+    place-items: center;
+    width: calc(310px/4);
+    height: calc(310px/5);
+    color: #000;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    transition: 0.5s;
+}
+
+span:hover {
+    transition: 0s;
+    background: rgba(255,255,255,0.1);
+}
+
+span:active {
+    background: #f4de60;
+    color: #868686;
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+.clear {
+    grid-column: span 2;
+    width: calc(310px/2);
+}
+
+.equal {
+    grid-column: span 3;
+    width: calc((310px/2)*1.5);
+    background: rgba(255,255,255,0.1);
+}
+
+.myfoot {
+    text-align: center;
+    font-size: 13px;   
+    padding-top: 2rem;
+}
+
+.myfoot a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.myfoot a:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .value {
+        width: 280px;
+        font-size: 30px;
+    }
+
+    span {
+        width: calc(280px/4);
+        height: calc(220px/5); 
+    }
+
+    .clear {
+        width: calc(280px/2);
+    }
+    
+    .equal {
+        width: calc((280px/2)*1.5);
+    }
+}
